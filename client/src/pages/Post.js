@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 
+
 function Post() {
     let {id} = useParams();
     const [postObject, setPostObject] = useState({});
@@ -21,13 +22,24 @@ function Post() {
     const addComment = () => {
         axios
           .post("http://localhost:3001/comments", {
-            commentBody: newComment,
-            PostId: id,
-          })
+                commentBody: newComment,
+                PostId: id,
+            },
+            {
+                headers: {
+                    accessToken: sessionStorage.getItem("accessToken"),
+                }
+            }
+          )
           .then((response) => {
-            const commentToAdd = { commentBody: newComment };
-            setComments([...comments, commentToAdd]); 
-            setNewComment("");
+            if(response.data.error) {
+                alert(response.data.error);
+            } else {
+                const commentToAdd = { commentBody: newComment };
+                setComments([...comments, commentToAdd]); 
+                setNewComment("");
+            }
+           
           });
     };
 
