@@ -52,13 +52,17 @@ function App() {
            <div className="navbar">
 
               <div className="links">
-                <Link to="/"> Home Page</Link>
-                <Link to="/createpost"> Create A Post</Link>
+                
 
-                {!authState.status && (
+                {!authState.status ? (
                   <>
                     <Link to="/login"> Login</Link>
                     <Link to="/registration"> Registration</Link>
+                  </>
+                ): (
+                  <>
+                    <Link to="/"> Home Page</Link>
+                    <Link to="/createpost"> Create A Post</Link>
                   </>
                 )}
 
