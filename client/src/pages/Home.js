@@ -1,7 +1,7 @@
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import axios from "axios";
 import { React, useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
 
 function Home() {
@@ -80,7 +80,7 @@ function Home() {
             </div>
 
             <div className="footer">
-              <div className="username">{value.username}</div>
+              <div className="username"> <Link to={`/profile/${value.UserId}`}>{value.username}</Link></div>
               <div className="buttons">
                 <ThumbUpAltIcon
                   onClick={() => {

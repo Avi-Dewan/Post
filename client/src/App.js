@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import './App.css';
 import { AuthContext } from "./helpers/AuthContext";
+
 import CreatePost from "./pages/CreatePost";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import Post from "./pages/Post";
+import Profile from "./pages/Profile";
 import Registration from "./pages/Registration";
 
 function App() {
@@ -81,6 +83,7 @@ function App() {
             <Route path="/post/:id" element={<Post/>} />
             <Route path="/registration" element={<Registration/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/profile/:id" element={<Profile/>} />
             <Route path="*"  element={<PageNotFound/>} />
           </Routes>
         </Router>
