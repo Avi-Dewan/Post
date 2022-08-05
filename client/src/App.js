@@ -6,6 +6,7 @@ import { AuthContext } from "./helpers/AuthContext";
 import CreatePost from "./pages/CreatePost";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import PageNotFound from "./pages/PageNotFound";
 import Post from "./pages/Post";
 import Registration from "./pages/Registration";
 
@@ -76,6 +77,7 @@ function App() {
             <Route path="/post/:id" element={<Post/>} />
             <Route path="/registration" element={<Registration/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path="*"  element={<PageNotFound/>} />
           </Routes>
         </Router>
       
