@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import './App.css';
 import { AuthContext } from "./helpers/AuthContext";
 
+import ChangePassword from "./pages/ChangePassword";
 import CreatePost from "./pages/CreatePost";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -84,6 +85,7 @@ function App() {
             <Route path="/registration" element={<Registration/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/profile/:id" element={<Profile/>} />
+            <Route path="/changepassword" element={<ChangePassword/>} />
             <Route path="*"  element={<PageNotFound/>} />
           </Routes>
         </Router>
